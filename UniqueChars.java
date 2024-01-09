@@ -14,18 +14,19 @@ public class UniqueChars {
 	{
         // Replace the following statement with your code
 		String ans = "" ;
-		for( int i = 0 ; i<s.length() ; i++)
+		boolean test = true;
+		ans = ans +s.charAt(0);
+		for(int i = 1 ; i<s.length() ;i ++)
 		{
+			test = true;
 			char ch = s.charAt(i);
-			boolean b = true;
-			for( int j = i+1 ; j<s.length() ; j++)
+			for(int j = 0 ; j <ans.length() ; j++)
 			{
-				if(ch == s.charAt(j)&&ch!= 32)
-				{
-					b = false;
-				}
+				if(ch == ans.charAt(j)&&ch!=32)
+					test = false;
+
 			}
-			if(b == true)
+			if(test == true)
 				ans = ans + (char)s.charAt(i);
 		}
         return ans;
