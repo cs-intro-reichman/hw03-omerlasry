@@ -1,13 +1,14 @@
-public class Calendar 
-{
-	static int dayOfMonth = 1;   
-	static int month = 1;
-	static int year = 1900;
-	static int dayOfWeek = 2;     // 1.1.1900 was a Monday
-	static int nDaysInMonth = 31; // Number of days in January
-    public static void main(String[] args) 
-	{
-		int GivenYear = Integer.parseInt(args[0]);
+public class Calendar {
+    static int year = 1900;
+    static int nDaysInMonth = 31; // Number of days in January
+    static int dayOfMonth = 1;
+    static int month = 1;
+    static int dayOfWeek = 2; // 1.1.1900 was a Monday
+    static int SundaysCount = 0;
+    static boolean isSunday;
+
+    public static void main(String args[]) {
+        int GivenYear = Integer.parseInt(args[0]);
         while (year <= GivenYear) {
             if (year == GivenYear) {
                 if (dayOfWeek != 1) {
@@ -19,7 +20,6 @@ public class Calendar
             advance();
         }
     }
-	
 	
 	private static void advance() 
 	 {
